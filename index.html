@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>妈妈，请停下"调理"的手 | 你的爱正在伤害孩子</title>
+    <meta name="description" content="揭示'调理脾胃'背后的真相：你的限制性喂养正在偷走孩子的智力、健康和未来。立即了解科学喂养方法。">
+    <meta name="keywords" content="调理脾胃,儿童营养,喂养误区,孩子瘦小,营养不良,科学育儿">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #111827;
+            --text-light: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --primary-orange: #f97316;
+            --danger-red: #ef4444;
+            --success-green: #22c55e;
+            --accent-blue: #38bdf8;
+            --accent-purple: #a855f7;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* 淡入动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 卡片样式 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        /* 叙述者卡片 */
+        .narrator-card {
+            background: rgba(249, 115, 22, 0.1);
+            border-left: 4px solid var(--primary-orange);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* 高亮文本 */
+        .highlight {
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 0.1rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+        
+        /* 危害卡片 */
+        .harm-card {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .harm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--danger-red);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        /* 致命闭环动画 */
+        .vortex {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 按钮样式 */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+        }
+        
+        /* 加载动画 */
+        .loader {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--primary-orange);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 响应式图片 */
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: 牙齿问题开篇 -->
+    <section class="section-padding py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <i class="fas fa-tooth text-6xl mb-6" style="color: var(--accent-blue);"></i>
+                <h1 class="text-4xl md:text-5xl font-black mb-6">
+                    妈妈，你发现了吗？
+                </h1>
+                <p class="text-xl text-secondary mb-8">
+                    现在的孩子，牙齿问题越来越多
+                </p>
+            </div>
+            
+            <div class="glass-card fade-in">
+                <p class="text-lg mb-4">
+                    我们给孩子的食物越来越精细，怕他们嚼不动、噎着...
+                </p>
+                <p class="text-lg mb-4">
+                    苹果切成小块，肉剁成肉糜，青菜切得碎碎的...
+                </p>
+                <p class="text-xl font-bold text-orange-400 mb-4">
+                    可是，孩子的牙齿却越来越不整齐，越来越容易蛀牙
+                </p>
+                <div class="narrator-card">
+                    <p class="text-lg">
+                        <i class="fas fa-lightbulb text-orange-400 mr-2"></i>
+                        <strong>牙医告诉我们：</strong>牙齿和颌骨需要通过咀嚼硬食物来锻炼！
+                        过度精细的食物让孩子的咀嚼功能退化了。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="fade-in text-center mt-12">
+                <p class="text-2xl font-bold mb-8">
+                    这个简单的道理，我们都懂
+                </p>
+                <p class="text-3xl font-black text-orange-400">
+                    那么，妈妈...
+                </p>
+                <p class="text-2xl mt-6">
+                    你是否正在用同样的方式<br>
+                    <span class="text-4xl font-black text-red-400">废掉孩子的胃？</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: 温室里的胃 -->
+    <section class="section-padding py-20 px-6 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    你正在打造一个<br>
+                    <span class="text-red-400">"温室里的胃"</span>
+                </h2>
+            </div>
+            
+            <div class="glass-card fade-in mb-8">
+                <div class="text-center mb-6">
+                    <i class="fas fa-seedling text-5xl text-green-400"></i>
+                </div>
+                <p class="text-lg mb-4">
+                    想象一下，如果你把一株小苗养在温室里，从不让它经历风雨...
+                </p>
+                <p class="text-lg mb-4">
+                    当有一天，你不得不把它移到室外时，会发生什么？
+                </p>
+                <p class="text-2xl font-black text-red-400 text-center">
+                    它会立刻枯萎！
+                </p>
+                <p class="text-lg mt-4">
+                    因为它从未学会如何适应真实的世界。
+                </p>
+            </div>
+            
+            <div class="narrator-card fade-in">
+                <p class="text-lg">
+                    <strong>孩子的胃，就是你正在培养的"温室植物"</strong>
+                </p>
+                <p class="mt-2">
+                    你给它的食物越单一、越"安全"，它的适应能力就越差。
+                    总有一天，孩子要离开你的保护，面对真实的食物世界。
+                </p>
+            </div>
+            
+            <div class="fade-in text-center mt-12">
+                <p class="text-xl mb-4">你是不是也这样？</p>
+                <div class="glass-card text-left">
+                    <p class="mb-3"><i class="fas fa-times text-red-400 mr-2"></i>西瓜太凉，不能吃</p>
+                    <p class="mb-3"><i class="fas fa-times text-red-400 mr-2"></i>香蕉滑肠，不能吃</p>
+                    <p class="mb-3"><i class="fas fa-times text-red-400 mr-2"></i>牛奶生痰，少喝</p>
+                    <p class="mb-3"><i class="fas fa-times text-red-400 mr-2"></i>肉类积食，一周最多两次</p>
+                    <p class="text-xl font-bold text-orange-400 mt-4">
+                        孩子的食物清单越来越短，而他却越来越瘦？
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: 数据对比 -->
+    <section class="section-padding py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    我们最讲究"养脾胃"<br>
+                    <span class="text-red-400">孩子却最瘦小？</span>
+                </h2>
+            </div>
+            
+            <div class="fade-in overflow-x-auto">
+                <table class="w-full glass-card">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="p-4 text-left">国家</th>
+                            <th class="p-4 text-center">10岁儿童平均体重</th>
+                            <th class="p-4 text-center">饮食特点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">🇺🇸 美国</td>
+                            <td class="p-4 text-center font-bold text-green-400">36.8 kg</td>
+                            <td class="p-4 text-center">食物多样，不忌口</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">🇯🇵 日本</td>
+                            <td class="p-4 text-center font-bold text-green-400">34.2 kg</td>
+                            <td class="p-4 text-center">生冷海鲜随便吃</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">🇰🇷 韩国</td>
+                            <td class="p-4 text-center font-bold text-green-400">35.5 kg</td>
+                            <td class="p-4 text-center">泡菜烤肉不限制</td>
+                        </tr>
+                        <tr class="bg-red-900/20">
+                            <td class="p-4">🇨🇳 中国</td>
+                            <td class="p-4 text-center font-bold text-red-400">33.7 kg</td>
+                            <td class="p-4 text-center font-bold">最讲究"调理脾胃"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="narrator-card fade-in mt-8 text-center">
+                <p class="text-xl font-bold">
+                    妈妈，是时候反思了...<br>
+                    我们付出了最多的"调理"，孩子却最瘦小？
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: 三大伤害 -->
+    <section class="section-padding py-20 px-6 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    限制性喂养的<br>
+                    <span class="text-red-400">三大不可逆伤害</span>
+                </h2>
+                <p class="text-xl text-secondary">正在你的"爱"中悄然发生</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="harm-card fade-in">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-brain text-5xl text-red-400 mb-4"></i>
+                        <p class="text-6xl font-black text-red-400">-15</p>
+                        <p class="text-xl font-bold">智商永久损失</p>
+                    </div>
+                    <p class="text-sm">
+                        营养不良会导致大脑发育受阻。研究表明，儿童期蛋白质-热能营养不良
+                        <span class="highlight">可使智商降低15分</span>，
+                        而这种损失是永久性的！
+                    </p>
+                </div>
+                
+                <div class="harm-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-dna text-5xl text-purple-400 mb-4"></i>
+                        <p class="text-2xl font-black text-purple-400">DOHaD</p>
+                        <p class="text-xl font-bold">编程成年慢性病</p>
+                    </div>
+                    <p class="text-sm">
+                        生命早期营养不良会"编程"孩子的基因，
+                        <span class="highlight">让他们成年后患心血管疾病、糖尿病的风险增加3-5倍</span>。
+                    </p>
+                </div>
+                
+                <div class="harm-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-shield-virus text-5xl text-blue-400 mb-4"></i>
+                        <p class="text-6xl font-black text-blue-400">70%</p>
+                        <p class="text-xl font-bold">免疫系统在肠道</p>
+                    </div>
+                    <p class="text-sm">
+                        肠道是人体最大的免疫器官。过度"干净"的饮食让肠道菌群失调，
+                        <span class="highlight">孩子反而更容易生病</span>！
+                    </p>
+                </div>
+            </div>
+            
+            <div class="fade-in text-center mt-12">
+                <p class="text-2xl font-bold text-red-400">
+                    妈妈，这就是你想要的结果吗？
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: 戳穿谎言 -->
+    <section class="section-padding py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    戳穿四大喂养谎言
+                </h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="fade-in">
+                    <div class="glass-card bg-red-900/20 border-l-4 border-red-400">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-times-circle text-red-400 mr-2"></i>
+                            谎言："这个食物不好消化"
+                        </p>
+                        <p class="text-secondary">你以为在保护孩子的肠胃</p>
+                    </div>
+                    <div class="glass-card bg-green-900/20 border-l-4 border-green-400 mt-2">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            真相：消化能力需要锻炼！
+                        </p>
+                        <p>
+                            就像肌肉一样，<span class="highlight">用进废退</span>。
+                            你越是给孩子吃"好消化"的食物，他的消化能力就越弱！
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="glass-card bg-red-900/20 border-l-4 border-red-400">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-times-circle text-red-400 mr-2"></i>
+                            谎言："寒凉食物伤脾胃"
+                        </p>
+                        <p class="text-secondary">西瓜、香蕉都不敢给孩子吃</p>
+                    </div>
+                    <div class="glass-card bg-green-900/20 border-l-4 border-green-400 mt-2">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            真相：人体有强大的体温调节系统
+                        </p>
+                        <p>
+                            <span class="highlight">食物进入胃部很快就会被加热到体温</span>。
+                            日本孩子冬天吃冰淇淋，身体照样棒！
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="glass-card bg-red-900/20 border-l-4 border-red-400">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-times-circle text-red-400 mr-2"></i>
+                            谎言："上火的东西不能吃"
+                        </p>
+                        <p class="text-secondary">荔枝、芒果统统禁止</p>
+                    </div>
+                    <div class="glass-card bg-green-900/20 border-l-4 border-green-400 mt-2">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            真相："上火"多是维生素缺乏
+                        </p>
+                        <p>
+                            所谓"上火"症状，多数是<span class="highlight">B族维生素缺乏</span>导致的。
+                            限制饮食反而加重维生素缺乏！
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="glass-card bg-red-900/20 border-l-4 border-red-400">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-times-circle text-red-400 mr-2"></i>
+                            谎言："孩子的肠胃天生脆弱"
+                        </p>
+                        <p class="text-secondary">需要特别"调理"才能健康</p>
+                    </div>
+                    <div class="glass-card bg-green-900/20 border-l-4 border-green-400 mt-2">
+                        <p class="font-bold text-lg mb-2">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            真相：6个月后消化系统已基本成熟
+                        </p>
+                        <p>
+                            <span class="highlight">是你的过度保护让它变得脆弱</span>，
+                            不是它天生脆弱！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: 致命闭环 -->
+    <section class="section-padding py-20 px-6 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    你正在制造的<br>
+                    <span class="text-red-400">"致命闭环"</span>
+                </h2>
+            </div>
+            
+            <div class="fade-in">
+                <div class="relative w-64 h-64 mx-auto">
+                    <svg class="vortex w-full h-full" viewBox="0 0 256 256">
+                        <defs>
+                            <linearGradient id="vortexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M128,32 Q224,128 128,224 Q32,128 128,32" 
+                              fill="none" 
+                              stroke="url(#vortexGradient)" 
+                              stroke-width="3"/>
+                        <text x="128" y="60" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">限制饮食</text>
+                        <text x="200" y="128" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">消化退化</text>
+                        <text x="128" y="200" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">更加虚弱</text>
+                        <text x="56" y="128" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">更严格限制</text>
+                    </svg>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <p class="text-xl font-bold text-red-400">
+                        越调理越虚弱，越虚弱越调理
+                    </p>
+                    <p class="text-lg mt-4">
+                        这是一个你亲手制造的死循环！
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: 生长曲线 -->
+    <section class="section-padding py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    直面真相：<br>
+                    <span class="text-orange-400">你的孩子在哪里？</span>
+                </h2>
+            </div>
+            
+            <div class="glass-card fade-in">
+                <div class="mb-6" style="height: 400px;">
+                    <canvas id="growthChart"></canvas>
+                </div>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <input type="number" id="childAge" placeholder="孩子年龄 (2-18岁)" 
+                           class="bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:border-blue-400">
+                    <input type="number" id="childWeight" placeholder="孩子体重 (kg)" 
+                           class="bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:border-blue-400">
+                    <button onclick="updateChart()" class="btn-primary">
+                        查看孩子的位置
+                    </button>
+                </div>
+                <p class="text-sm text-gray-500 mt-4">
+                    * 数据来源：WHO儿童生长标准
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: 解决方案 -->
+    <section class="section-padding py-20 px-6 bg-gradient-to-b from-gray-900 to-black">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    从"胃修理工"到<br>
+                    <span class="text-green-400">"肠道园丁"</span>
+                </h2>
+            </div>
+            
+            <div class="narrator-card fade-in bg-green-900/20 border-green-400">
+                <p class="text-xl font-bold mb-4">妈妈，是时候改变了！</p>
+                <p class="mb-4">
+                    把自己想象成一个园丁，而不是修理工。
+                    孩子的肠道是一个美丽的花园，需要：
+                </p>
+                <ul class="space-y-2">
+                    <li>🌱 <strong>多样的种子</strong>（各种食物）</li>
+                    <li>💧 <strong>适当的浇水</strong>（均衡营养）</li>
+                    <li>☀️ <strong>阳光雨露</strong>（快乐进餐）</li>
+                    <li>🌿 <strong>自然生长</strong>（相信身体智慧）</li>
+                </ul>
+            </div>
+            
+            <div class="fade-in mt-12 text-center">
+                <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                     alt="繁茂的花园" 
+                     class="hero-image mx-auto mb-6">
+                <p class="text-2xl font-bold text-green-400">
+                    这，才是你该为孩子打造的未来
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: AI营养师 -->
+    <section class="section-padding py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">
+                    AI营养师<br>
+                    <span class="text-orange-400">为你定制勇敢餐单</span>
+                </h2>
+                <p class="text-xl text-secondary">
+                    告诉我们孩子的情况，让科学帮你迈出第一步
+                </p>
+            </div>
+            
+            <div class="glass-card fade-in">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            孩子常吃的"安全"食物（用逗号分隔）
+                        </label>
+                        <input type="text" id="safeFoods" 
+                               placeholder="例如：米饭, 面条, 鸡蛋羹" 
+                               class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:border-orange-400">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            你不敢给孩子吃的"挑战"食物（用逗号分隔）
+                        </label>
+                        <input type="text" id="challengeFoods" 
+                               placeholder="例如：香蕉, 牛奶, 鱼" 
+                               class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:border-orange-400">
+                    </div>
+                    <button onclick="generateMealPlan()" class="btn-primary w-full text-lg py-4">
+                        <i class="fas fa-magic mr-2"></i>
+                        生成专属勇敢餐单
+                    </button>
+                </div>
+                
+                <div id="loader" class="hidden">
+                    <div class="loader"></div>
+                    <p class="text-center text-secondary">AI营养师正在为您定制方案...</p>
+                </div>
+                
+                <div id="planResult" class="mt-6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: 最终承诺 -->
+    <section class="section-padding py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="fade-in">
+                <h2 class="text-3xl md:text-4xl font-black mb-8">
+                    妈妈，你的抉择<br>
+                    <span class="text-orange-400">就是孩子的未来</span>
+                </h2>
+                
+                <div class="narrator-card bg-orange-900/20 border-orange-400 max-w-2xl mx-auto mb-8">
+                    <p class="text-lg mb-4">亲爱的妈妈：</p>
+                    <p class="mb-4">
+                        我知道改变很难，我知道你会害怕。
+                        但请相信，孩子的身体比你想象的更强大、更智慧。
+                    </p>
+                    <p class="mb-4">
+                        他们需要的不是"调理"，而是机会——
+                        一个自由生长、充分发育的机会。
+                    </p>
+                    <p class="text-xl font-bold text-orange-400">
+                        真正的爱，是相信，而不是限制。
+                    </p>
+                </div>
+                
+                <button onclick="makeCommitment()" class="btn-primary text-xl py-4 px-8">
+                    我要成为孩子的"肠道园丁"
+                </button>
+                
+                <p class="mt-6 text-secondary">
+                    已有 <span class="font-bold text-orange-400">87,432</span> 位妈妈做出了改变
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 text-center text-gray-500 text-sm">
+        <p>为了孩子的未来，让我们一起努力 ❤️</p>
+        <p class="mt-2">© 2025 肠道花园计划 - 科学育儿，健康成长</p>
+    </footer>
+
+    <script>
+        // 淡入动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 生长曲线图表
+        let growthChart = null;
+        
+        function initGrowthChart() {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            
+            // 2-18岁的数据
+            const ageLabels = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+            const normalWeight = [12.5, 14.5, 16.5, 18.5, 20.5, 23, 26, 29, 33, 37, 42, 47, 52, 56, 59, 61, 62];
+            const warningWeight = [11, 12.5, 14, 15.5, 17, 19, 21.5, 24, 27, 30.5, 34.5, 38.5, 42.5, 46, 48.5, 50, 51];
+            
+            growthChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ageLabels,
+                    datasets: [
+                        {
+                            label: '理想体重轨迹',
+                            data: normalWeight,
+                            borderColor: '#22c55e',
+                            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: '营养不良警戒线',
+                            data: warningWeight,
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            fill: '-1',
+                            tension: 0.4
+                        },
+                        {
+                            label: '您孩子的位置',
+                            data: [],
+                            borderColor: '#f97316',
+                            backgroundColor: '#f97316',
+                            pointRadius: 10,
+                            pointHoverRadius: 12,
+                            showLine: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e5e7eb',
+                                font: { size: 14 }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: '儿童体重生长曲线（2-18岁）',
+                            color: '#e5e7eb',
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '年龄（岁）',
+                                color: '#9ca3af'
+                            },
+                            grid: { color: 'rgba(156, 163, 175, 0.2)' },
+                            ticks: { color: '#9ca3af' }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: '体重（kg）',
+                                color: '#9ca3af'
+                            },
+                            grid: { color: 'rgba(156, 163, 175, 0.2)' },
+                            ticks: { color: '#9ca3af' },
+                            min: 10,
+                            max: 65
+                        }
+                    }
+                }
+            });
+        }
+
+        // 初始化图表
+        window.addEventListener('load', initGrowthChart);
+
+        // 更新图表
+        function updateChart() {
+            const age = parseFloat(document.getElementById('childAge').value);
+            const weight = parseFloat(document.getElementById('childWeight').value);
+            
+            if (!age || !weight || age < 2 || age > 18) {
+                alert('请输入有效的年龄（2-18岁）和体重');
+                return;
+            }
+
+            if (growthChart) {
+                growthChart.data.datasets[2].data = [{x: age, y: weight}];
+                growthChart.update();
+                
+                // 显示解释
+                const normalWeight = [12.5, 14.5, 16.5, 18.5, 20.5, 23, 26, 29, 33, 37, 42, 47, 52, 56, 59, 61, 62];
+                const warningWeight = [11, 12.5, 14, 15.5, 17, 19, 21.5, 24, 27, 30.5, 34.5, 38.5, 42.5, 46, 48.5, 50, 51];
+                const index = Math.floor(age) - 2;
+                
+                if (index >= 0 && index < normalWeight.length) {
+                    let message = '';
+                    if (weight < warningWeight[index]) {
+                        message = '⚠️ 警告：您的孩子体重严重偏低，已低于营养不良警戒线！';
+                    } else if (weight < normalWeight[index] * 0.9) {
+                        message = '⚠️ 注意：您的孩子体重偏低，需要改善营养状况。';
+                    } else {
+                        message = '✓ 您的孩子体重在正常范围内，继续保持均衡饮食！';
+                    }
+                    
+                    setTimeout(() => alert(message), 100);
+                }
+            }
+        }
+
+        // AI餐单生成（模拟）
+        function generateMealPlan() {
+            const safeFoods = document.getElementById('safeFoods').value;
+            const challengeFoods = document.getElementById('challengeFoods').value;
+            
+            if (!safeFoods || !challengeFoods) {
+                alert('请填写完整的食物信息');
+                return;
+            }
+            
+            const loader = document.getElementById('loader');
+            const resultDiv = document.getElementById('planResult');
+            
+            loader.classList.remove('hidden');
+            resultDiv.innerHTML = '';
+            
+            // 模拟API调用
+            setTimeout(() => {
+                const safeFoodList = safeFoods.split(',').map(f => f.trim());
+                const challengeFoodList = challengeFoods.split(',').map(f => f.trim());
+                
+                const plan = `
+                    <div class="glass-card bg-green-900/20 border-l-4 border-green-400 mt-6">
+                        <h3 class="text-xl font-bold text-green-400 mb-4">
+                            您的专属3日勇敢餐单
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-orange-400">第一天：温柔的开始</h4>
+                                <p class="text-sm mb-2">早餐：${safeFoodList[0]} + 一小勺${challengeFoodList[0]}泥</p>
+                                <p class="text-sm mb-2">午餐：${safeFoodList[1] || safeFoodList[0]} + 常规配菜</p>
+                                <p class="text-sm mb-2">晚餐：${safeFoodList[2] || safeFoodList[0]} + 蔬菜</p>
+                                <p class="text-sm text-gray-400">
+                                    💡 今天只是让孩子"认识"${challengeFoodList[0]}，即使只是看看、闻闻也是进步！
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-orange-400">第二天：小小的尝试</h4>
+                                <p class="text-sm mb-2">早餐：${safeFoodList[0]} + 两小勺${challengeFoodList[0]}</p>
+                                <p class="text-sm mb-2">午餐：${safeFoodList[1] || safeFoodList[0]} + 一点点${challengeFoodList[1] || challengeFoodList[0]}</p>
+                                <p class="text-sm mb-2">晚餐：熟悉的晚餐</p>
+                                <p class="text-sm text-gray-400">
+                                    💡 如果孩子愿意尝一口，记得温柔地鼓励，但不要过度表扬。
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-orange-400">第三天：建立信心</h4>
+                                <p class="text-sm mb-2">早餐：可以尝试让${challengeFoodList[0]}成为早餐的一部分</p>
+                                <p class="text-sm mb-2">午餐：继续昨天的组合，稍微增加分量</p>
+                                <p class="text-sm mb-2">晚餐：${safeFoodList[0]} + 新的蔬菜尝试</p>
+                                <p class="text-sm text-gray-400">
+                                    💡 三天后，孩子可能已经接受了新食物。记住：这不是结束，而是开始！
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-4 bg-orange-900/20 rounded-lg">
+                            <p class="font-bold text-orange-400 mb-2">记住园丁的智慧：</p>
+                            <p class="text-sm">
+                                • 保持轻松愉快的用餐氛围<br>
+                                • 每次只引入一种新食物<br>
+                                • 相信孩子的身体智慧<br>
+                                • 庆祝每一个小进步
+                            </p>
+                        </div>
+                    </div>
+                `;
+                
+                resultDiv.innerHTML = plan;
+                loader.classList.add('hidden');
+            }, 2000);
+        }
+
+        // 最终承诺
+        function makeCommitment() {
+            const confirmed = confirm(
+                '我承诺：\n\n' +
+                '我将相信孩子的身体智慧，\n' +
+                '不再用恐惧限制孩子的饮食，\n' +
+                '我要成为孩子肠道花园的园丁，\n' +
+                '让TA自由、健康、快乐地成长！\n\n' +
+                '点击"确定"加入肠道花园计划'
+            );
+            
+            if (confirmed) {
+                alert(
+                    '🎉 恭喜你，勇敢的妈妈！\n\n' +
+                    '你已经迈出了最重要的一步。\n' +
+                    '记住，改变需要时间，但你不是一个人。\n\n' +
+                    '让我们一起，为孩子创造一个更健康的未来！'
+                );
+            }
+        }
+    </script>
+</body>
+</html>
