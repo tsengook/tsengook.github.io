@@ -1,0 +1,190 @@
+{
+  "module": "M1",
+  "title": "昨夜的证词",
+  "subtitle": "Past Simple Q&A • 外研社五上 M1",
+  "panels": [
+    {
+      "id": "P01",
+      "sceneTitle": "情绪博物馆·夜色入口",
+      "tierI": {
+        "sceneDescription": "夜幕下的情绪博物馆被雨后薄雾环绕，湿润的石板路反射出金色灯光。珍珍背着渐变紫色的背包，牵着发光的蜜桃兔挂件，正与穿制服的夜巡守卫对话。",
+        "chineseDialogue": "珍珍喘着气说明来意，守卫举起光幕询问：\"昨夜到底发生了什么？\""
+      },
+      "tierII": {
+        "englishLine": "Did you [[see]] anyone enter the gallery [[yesterday]]?",
+        "translation": "你昨天看到有人进入展厅了吗？",
+        "wordCards": [
+          {
+            "word": "see",
+            "ipa": "/siː/",
+            "translation": "看见",
+            "examples": [
+              "I see the lights from here.",
+              "Did you see the magic creature?"
+            ]
+          },
+          {
+            "word": "yesterday",
+            "ipa": "/ˈjɛstərdeɪ/",
+            "translation": "昨天",
+            "examples": [
+              "We studied verbs yesterday.",
+              "She called me yesterday evening."
+            ]
+          }
+        ]
+      },
+      "tierIII": {
+        "spellName": "Inquiry Beam",
+        "spellTagline": "Did + 主语 + 动词原形?",
+        "effect": "Q版珍珍举起星辉麦克风，发射蓝金色询问光束，将疑影守卫的怀疑符文一一照亮。"
+      },
+      "tierIV": {
+        "methodTitle": "过去时三板斧 · 第一步",
+        "bullets": [
+          "Step 1: 用 Did 打开时光门",
+          "Step 2: 主语紧跟不变身",
+          "Step 3: 动词保持原形，时间词收尾"
+        ]
+      },
+      "tierV": {
+        "mrd7": {
+          "dimension": "韧性黄",
+          "progress": 15,
+          "note": "敢于发问，心灵彩虹亮度 +15%"
+        },
+        "ugcTask": {
+          "title": "UGC 预告",
+          "prompt": "写下你昨天鼓起勇气问出的一个问题。",
+          "tip": "用句型 Did you... yesterday?"
+        }
+      },
+      "visualPrompt": "现代动漫·暖金主光与冷蓝轮廓，珍珍 7 头身，短发右侧内卷，紫粉连衣裙配玻璃心灵彩虹。"
+    },
+    {
+      "id": "P02",
+      "sceneTitle": "记忆甬道·银色回声",
+      "tierI": {
+        "sceneDescription": "漫长的回声走廊里漂浮着光之档案。珍珍触摸一片记忆玻璃，画面中出现匆匆跑过的少年影子，手里握着闪闪发亮的银钥匙。",
+        "chineseDialogue": "记忆碎片闪现，蜜桃兔轻轻跃起指向倒地的钥匙。"
+      },
+      "tierII": {
+        "englishLine": "I [[saw]] a shadow boy drop a silver [[key]].",
+        "translation": "我看见一个影子男孩掉下了一把银色的钥匙。",
+        "wordCards": [
+          {
+            "word": "saw",
+            "ipa": "/sɔː/",
+            "translation": "看见（see 的过去式）",
+            "examples": [
+              "I saw the comet last night.",
+              "She saw a friend at the museum."
+            ]
+          },
+          {
+            "word": "key",
+            "ipa": "/kiː/",
+            "translation": "钥匙",
+            "examples": [
+              "This key opens the door.",
+              "Keep the key in your pocket."
+            ]
+          }
+        ]
+      },
+      "tierIII": {
+        "spellName": "Chrono Slash",
+        "spellTagline": "主语 + V2 + ...",
+        "effect": "Q版珍珍挥动时间羽刃，切开昨夜的影像，亮起 saw 的过去式符号，让证据凝固成光。"
+      },
+      "tierIV": {
+        "methodTitle": "过去时三板斧 · 第二步",
+        "bullets": [
+          "Step 1: 找到动作的 V2 形态",
+          "Step 2: 放进 I/He/She 后面",
+          "Step 3: 用时间副词锁定昨夜"
+        ]
+      },
+      "tierV": {
+        "mrd7": {
+          "dimension": "洞察蓝",
+          "progress": 20,
+          "note": "复述证词，洞察力 +20%"
+        },
+        "ugcTask": {
+          "title": "任务提示",
+          "prompt": "描述你昨天看见的一件细节。",
+          "tip": "开头试试：I saw..."
+        }
+      },
+      "visualPrompt": "玻璃长廊充满漂浮档案，冷蓝与银白色调，Q版珍珍在侧面板挥动时间羽刃。"
+    },
+    {
+      "id": "P03",
+      "sceneTitle": "证词大厅·光羽宣誓",
+      "tierI": {
+        "sceneDescription": "巨大的宣誓厅中央悬挂着心灵彩虹仪，守卫记录着珍珍的证词。光束照在珍珍坚定的脸庞，观测席上的灵光观众低声议论。",
+        "chineseDialogue": "守卫点头：\"有了证词，我们可以开启昨夜的心灵录像了。\""
+      },
+      "tierII": {
+        "englishLine": "He [[picked]] it up and [[gave]] it to the night [[guide]].",
+        "translation": "他捡起钥匙并把它交给了夜行向导。",
+        "wordCards": [
+          {
+            "word": "picked",
+            "ipa": "/pɪkt/",
+            "translation": "捡起（pick 的过去式）",
+            "examples": [
+              "She picked a flower.",
+              "I picked up the phone yesterday."
+            ]
+          },
+          {
+            "word": "gave",
+            "ipa": "/ɡeɪv/",
+            "translation": "给（give 的过去式）",
+            "examples": [
+              "He gave me a map.",
+              "We gave the ticket to the guard."
+            ]
+          },
+          {
+            "word": "guide",
+            "ipa": "/ɡaɪd/",
+            "translation": "向导",
+            "examples": [
+              "The guide showed us the hall.",
+              "Ask the guide for help."
+            ]
+          }
+        ]
+      },
+      "tierIII": {
+        "spellName": "Tri-Ed Sigil",
+        "spellTagline": "规则动词 +ed 三读，V2 不规则对照",
+        "effect": "Q版珍珍召唤三重发音符阵，/t/、/d/、/ɪd/ 依次亮起，同时给 gave 显示特殊紫光。"
+      },
+      "tierIV": {
+        "methodTitle": "过去时三板斧 · 第三步",
+        "bullets": [
+          "Step 1: -ed 读 /t/、/d/ 或 /ɪd/",
+          "Step 2: 不规则动词背发光卡",
+          "Step 3: 证词结尾强调动作结果"
+        ]
+      },
+      "tierV": {
+        "mrd7": {
+          "dimension": "表达橙",
+          "progress": 25,
+          "note": "完整陈述，表达力 +25%"
+        },
+        "ugcTask": {
+          "title": "挑战卡",
+          "prompt": "续写昨夜故事：再说一个他做的动作。",
+          "tip": "句型提示：He/She + V2..."
+        }
+      },
+      "visualPrompt": "宣誓厅金色主光配冷蓝轮廓，心灵彩虹仪悬浮，Q版珍珍在魔法面板上释放三重发音符阵。"
+    }
+  ]
+}
