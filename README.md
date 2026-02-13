@@ -1,2 +1,8 @@
 # tsengook.github.io
-这个交互式网页通过揭示“调理脾胃”式喂养的危害，并提供AI营养师工具，旨在帮助焦虑的中国家长用科学喂养替代传统误区，守护孩子的健康未来。
+
+本仓库当前新增了「Apple Tense Arena」策划文档，用于把“用英语时态控制苹果”的创意落为可执行方案。
+
+## 文档目录
+- 信息架构与页面线框：`docs/apple-tense-game/01-information-architecture.md`
+- 12 时态技能表：`docs/apple-tense-game/02-tense-skill-table.md`
+- MVP 技术结构与接口定义：`docs/apple-tense-game/03-mvp-tech-spec.md`
