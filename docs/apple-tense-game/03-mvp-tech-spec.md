@@ -24,6 +24,7 @@ src/
       TenseCardGrid.tsx
       QuizModal.tsx
       BattleHUD.tsx
+      BounceLoopTrack.tsx
     result/
       ResultRadarChart.tsx
       MistakePairCard.tsx
@@ -77,8 +78,30 @@ export interface QuizItem {
 2. `quiz_open`：弹题
 3. `judge`：判题
 4. `cast_success` 或 `cast_fail`
-5. `apply_effect`：结算生命/疲劳/伤痕
-6. `next_turn`
+5. `loop_drop`：第一次掉落
+6. `loop_bounce`：弹回空中
+7. `loop_drop_again`：二次掉落
+8. `apply_effect`：结算生命/疲劳/伤痕
+9. `next_turn`
+
+### 4.1 Bounce Torture Loop 动画参数
+```ts
+export interface BounceLoopConfig {
+  dropMs: number;
+  bounceMs: number;
+  secondDropMs: number;
+  loopCount: number;
+  damping: number; // 每次反弹高度衰减
+}
+
+export const defaultLoop: BounceLoopConfig = {
+  dropMs: 450,
+  bounceMs: 280,
+  secondDropMs: 380,
+  loopCount: 2,
+  damping: 0.72,
+};
+```
 
 ## 5. 本地接口契约（MVP）
 - `GET /api/tenses`：返回 12 技能基础参数
