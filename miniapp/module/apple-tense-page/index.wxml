@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="header">
+    <text class="title">Apple Tense Arena · 独立页面模块</text>
+    <text class="subtitle">答题后触发掉落→弹回→再掉落</text>
+  </view>
+
+  <view class="scoreboard">
+    <text>HP: {{hp}}</text>
+    <text>连击: {{combo}}</text>
+    <text>已循环: {{totalLoops}}</text>
+  </view>
+
+  <view class="stage">
+    <view class="apple apple-{{loopPhase}}" style="transform: translateY({{appleY}}px);">
+      🍎
+    </view>
+    <view class="phase-tag">{{phaseLabel}}</view>
+  </view>
+
+  <view class="panel">
+    <view class="panel-title">选择时态技能</view>
+    <view class="tense-grid">
+      <block wx:for="{{tenses}}" wx:key="id">
+        <button size="mini" class="tense-btn" data-id="{{item.id}}" bindtap="onPickTense">{{item.short}}</button>
+      </block>
+    </view>
+  </view>
+
+  <view wx:if="{{activeQuiz}}" class="panel quiz">
+    <view class="panel-title">{{activeQuiz.prompt}}</view>
+    <block wx:for="{{activeQuiz.options}}" wx:key="index">
+      <button class="option-btn" data-index="{{index}}" bindtap="onAnswer">{{item}}</button>
+    </block>
+  </view>
+
+  <view wx:if="{{message}}" class="message">{{message}}</view>
+</view>

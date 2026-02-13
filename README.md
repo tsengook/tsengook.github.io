@@ -16,3 +16,8 @@
 ## 小程序开发依赖
 - 依赖清单文件：`miniapp/package.json`
 - 使用说明：`miniapp/README.md`
+
+
+## 微信小程序独立页面模块
+- 可直接拷贝安装：`miniapp/module/apple-tense-page/`
+- 安装说明：`miniapp/module/apple-tense-page/README.md`
